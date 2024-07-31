@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/bg4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #121212;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #242424;
+}
+
+.pulse-shake {
+  animation: pulse-shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes pulse-shake {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  10% {
+    transform: translate3d(-5px, 0, 0) scale(1.1) rotate(-5deg);
+  }
+  20% {
+    transform: translate3d(10px, 0, 0) scale(1) rotate(5deg);
+  }
+  30% {
+    transform: translate3d(-10px, 0, 0) scale(1.1) rotate(-5deg);
+  }
+  40% {
+    transform: translate3d(10px, 0, 0) scale(1) rotate(5deg);
+  }
+  50% {
+    transform: translate3d(-5px, 0, 0) scale(1.1) rotate(-5deg);
+  }
+  60% {
+    transform: translate3d(5px, 0, 0) scale(1) rotate(5deg);
+  }
+  70% {
+    transform: translate3d(-5px, 0, 0) scale(1.1) rotate(-5deg);
+  }
+  80% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+}
